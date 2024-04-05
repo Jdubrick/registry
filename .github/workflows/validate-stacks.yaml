@@ -17,7 +17,7 @@ name: Validate stacks
 
 on:
   push:
-    branches: [main]
+    branches: [main, fix/odo-failures]
   pull_request:
     branches: [main]
   schedule:
