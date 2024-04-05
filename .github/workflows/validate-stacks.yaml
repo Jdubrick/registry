@@ -98,7 +98,7 @@ jobs:
           kubernetes version: ${{ env.KUBERNETES_VERSION }}
           driver: "docker"
           github token: ${{ secrets.GITHUB_TOKEN }}
-          start args: "--addons=ingress"
+          start args: "--addons=ingress --memory 8gb"
 
       - name: Install odo v2
         uses: redhat-actions/openshift-tools-installer@2de9a80cf012ad0601021515481d433b91ef8fd5 # v1
@@ -131,7 +131,7 @@ jobs:
           kubernetes version: ${{ env.KUBERNETES_VERSION }}
           driver: "docker"
           github token: ${{ secrets.GITHUB_TOKEN }}
-          start args: "--addons=ingress"
+          start args: "--addons=ingress --memory 8gb"
 
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
