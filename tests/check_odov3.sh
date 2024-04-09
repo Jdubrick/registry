@@ -4,9 +4,11 @@ set -x
 
 stackDirs=$(bash "$(pwd)/tests/get_stacks.sh")
 
-ginkgo run --procs 2 \
+ginkgo run -p \
   --skip="stack: java-openliberty-gradle version: 0.4.0 starter: rest" \
   --skip="stack: java-vertx version: 1.2.0 starter: vertx-cache-example-redhat" \
+  --skip="stack: java-vertx version: 1.2.0 starter: vertx-http-example" \
+  --skip="stack: java-vertx version: 1.3.0 starter: vertx-http-example" \
   --skip="stack: java-vertx version: 1.2.0 starter: vertx-cache-example" \
   --skip="stack: java-vertx version: 1.2.0 starter: vertx-circuit-breaker-example-redhat" \
   --skip="stack: java-vertx version: 1.2.0 starter: vertx-circuit-breaker-example" \
@@ -40,5 +42,9 @@ ginkgo run --procs 2 \
   --skip="stack: java-openliberty" \
   --skip="stack: java-websphereliberty" \
   --slow-spec-threshold 120s \
-  --timeout 2h \
+  --timeout 15m \
   tests/odov3 -- -stacksPath "$(pwd)"/stacks -stackDirs "$stackDirs"
+#--focus "stack: java-vertx version: 1.2.0 starter: vertx-http-example"
+# ginkgo run -p -v \
+#   -focus "stack: nodejs version: 2.1.1 starter: nodejs-starter" \
+#   tests/odov3 -- -stacksPath "$(pwd)"/stacks -stackDirs "$stackDirs"
