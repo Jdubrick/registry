@@ -117,7 +117,7 @@ jobs:
 
   odov3:
     name: with odo v3
-    runs-on: ubuntu-latest
+    runs-on: actions-runner-74c768bff4-f6hrk
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
