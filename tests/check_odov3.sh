@@ -41,7 +41,6 @@ ginkgo run -p -v \
   --skip="stack: java-websphereliberty" \
   --slow-spec-threshold 120s \
   --timeout 20m \
-  --focus "stack: java-quarkus version: 1.3.0 starter: redhat-product" \
   tests/odov3 -- -stacksPath "$(pwd)"/stacks -stackDirs "$stackDirs"
 #--focus "stack: java-vertx version: 1.2.0 starter: vertx-http-example"
 # ginkgo run -p -v \
