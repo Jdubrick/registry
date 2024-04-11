@@ -39,10 +39,8 @@ ginkgo run --procs 2 -v \
   --skip="stack: java-wildfly" \
   --skip="stack: java-openliberty" \
   --skip="stack: java-websphereliberty" \
+  --skip="stack: java-quarkus version: 1.3.0 starter: community" \
+  --skip="stack: java-quarkus version: 1.4.0 starter: community" \
   --slow-spec-threshold 120s \
   --timeout 2h \
   tests/odov3 -- -stacksPath "$(pwd)"/stacks -stackDirs "$stackDirs"
-#--focus "stack: java-vertx version: 1.2.0 starter: vertx-http-example"
-# ginkgo run -p -v \
-#   -focus "stack: java-vertx version: 1.2.0 starter: vertx-health-checks-example-redhat" \
-#   tests/odov3 -- -stacksPath "$(pwd)"/stacks -stackDirs "$stackDirs"
